@@ -1,33 +1,33 @@
 package testSuite;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import testClass.BuscarInformacion;
+import testClass.SendForm;
 
-public class Prueba {
-
+public class QANOVA {
     ChromeDriver webDriver;
-    String url="https://www.google.com/";
-
+    String url="";
 
     @BeforeTest
     public void setup(){
         System.setProperty("webdriver.chrome.driver","driverNavegador/chromedriver.exe");
-        webDriver = new ChromeDriver();
+        webDriver= new ChromeDriver();
         webDriver.get(url);
     }
 
+
     @AfterTest
-    public void closedriver(){
-       webDriver.close();
+    public void close(){
+        webDriver.close();
     }
 
     @Test
-    public void buscarinformacion(){
-        BuscarInformacion buscarinformacion= new BuscarInformacion();
-        buscarinformacion.buscarperro(webDriver);
+    public void CPM0001.enviarformularioqa(){
+    SendForm test= new SendForm();
+    test.enviarform(webDriver);
     }
 
 }
